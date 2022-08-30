@@ -1,5 +1,3 @@
-@import "../../styles/variables";
-
 .commonInput {
   position: relative;
 
@@ -13,7 +11,7 @@
     border: 1px solid $input-color-secondary;
   
     &:focus {
-      outline: 1px solid $input-color-secondary;;
+      outline: 1px solid $input-color-secondary;
     }
   }
   
