@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.commonInput {
+  position: relative;
+
+  &__input {
+    width: 278px;
+    height: 30px;
+    font-size: 15px;
+    padding: 0 10px;
+    border-radius: 8px;
+    background-color: $input-color-primary;
+    border: 1px solid $input-color-secondary;
+  
+    &:focus {
+      outline: 1px solid $input-color-secondary;;
+    }
+  }
+  
+  &__icon {
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    padding: 5px;
+  }
+}
+
+.padding-big {
+  width: 230px;
+  padding: 0 34px;
+}
+
+.postfix {
+  transform: translateX(-100%);
+}
