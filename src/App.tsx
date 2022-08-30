@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import CommonInput from './components/UI/CommonInput';
+import CommonInput from './components/UI/CommonInput/CommonInput';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import './App.scss';
 

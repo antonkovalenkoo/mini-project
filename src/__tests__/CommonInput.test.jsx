@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen } from "@testing-library/react";
 import userEvent from '@testing-library/user-event';
-import CommonInput from "../components/UI/CommonInput";
+import CommonInput from "../components/UI/CommonInput/CommonInput";
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const props = {

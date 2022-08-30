@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ICommonInputProps } from '../../models/index';
+import { ICommonInputProps } from '../../../models/index';
 import './style.scss';
 
 const CommonInput: FC<ICommonInputProps> = ({ 
