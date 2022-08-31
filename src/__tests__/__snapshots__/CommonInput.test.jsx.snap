@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommonInput component CommonInput pass all input props to input 1`] = `
+<input
+  class="commonInput__input padding-big"
+  placeholder="Say Hello!"
+  type="text"
+  value="Hello!"
+/>
+`;

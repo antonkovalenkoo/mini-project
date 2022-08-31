@@ -1,9 +1,15 @@
+import { FC } from 'react';
+import CommonInput from './components/UI/CommonInput/CommonInput';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import './App.scss';
 
-const App = () => {
+const App: FC = () => {
   return (
-    <div className="App">
-      TEST
+    <div className="app">
+      <CommonInput 
+        prefixIcon={faCoffee}
+        postfixIcon={faCoffee}
+      />
     </div>
   );
 }
