@@ -1,9 +1,9 @@
-import { FC } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ICommonInputProps } from '../../../models/index';
-import './style.scss';
+import { FC } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ICommonInputProps } from '../../../models/index'
+import './style.scss'
 
-const CommonInput: FC<ICommonInputProps> = ({ 
+const CommonInput: FC<ICommonInputProps> = ({
   prefixIcon,
   postfixIcon,
   className,
@@ -11,27 +11,16 @@ const CommonInput: FC<ICommonInputProps> = ({
   ...props
 }) => {
   return (
-    <div className='commonInput'>
-      {prefixIcon && 
-        <FontAwesomeIcon
-          title='prefix'
-          className='commonInput__icon' 
-          icon={prefixIcon} 
-        />
-      }
-      <input 
-        {...props}
-        className= {`commonInput__input ${prefixIcon && 'padding-big'}`}
-      />
-      {postfixIcon && 
-        <FontAwesomeIcon
-          title='postfix'
-          className='commonInput__icon postfix' 
-          icon={postfixIcon} 
-        />
-      }
+    <div className="commonInput">
+      {prefixIcon && (
+        <FontAwesomeIcon title="prefix" className="commonInput__icon" icon={prefixIcon} />
+      )}
+      <input {...props} className={`commonInput__input ${prefixIcon && 'padding-big'}`} />
+      {postfixIcon && (
+        <FontAwesomeIcon title="postfix" className="commonInput__icon postfix" icon={postfixIcon} />
+      )}
     </div>
   )
 }
 
-export default CommonInput;
+export default CommonInput

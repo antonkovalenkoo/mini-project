@@ -1,21 +1,17 @@
-import { FC } from 'react';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import CommonInput from './components/UI/CommonInput/CommonInput';
-import CommonButton from "./components/UI/CommonButton/CommonButton";
-import './App.scss';
+import { FC } from 'react'
+import { Routes, Route } from 'react-router'
+import { MainPage, SignIn, SignUp } from './components'
+import './App.scss'
 
 const App: FC = () => {
   return (
-    <div className="app">
-      <CommonInput 
-        prefixIcon={faCoffee}
-        postfixIcon={faCoffee}
-      />
-      <CommonButton>
-        Подтвердить!
-      </CommonButton>
-    </div>
-  );
+    <Routes>
+      <Route path="*" element={<SignIn />} />
+      <Route path="mainPage" element={<MainPage />} />
+      <Route path="signIn" element={<SignIn />} />
+      <Route path="signUp" element={<SignUp />} />
+    </Routes>
+  )
 }
 
-export default App;
+export default App

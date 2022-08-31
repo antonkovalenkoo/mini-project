@@ -1,12 +1,8 @@
-import { ButtonHTMLAttributes, FC } from 'react';
-import './style.scss';
+import { ButtonHTMLAttributes, FC } from 'react'
+import './style.scss'
 
-const CommonButton: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
-  ...props
-}) => {
-  return (
-    <button {...props} className='CommonButton' />
-  )
+const CommonButton: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({ ...props }) => {
+  return <button {...props} className="CommonButton" />
 }
 
-export default CommonButton;
+export default CommonButton
