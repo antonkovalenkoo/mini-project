@@ -7,11 +7,11 @@
     font-size: 15px;
     padding: 0 10px;
     border-radius: 8px;
-    background-color: $input-color-primary;
-    border: 1px solid $input-color-secondary;
+    background-color: $primary-light;
+    border: 1px solid $primary-gray;
   
     &:focus {
-      outline: 1px solid $input-color-secondary;
+      outline: 1px solid $primary-gray;
     }
   }
   
