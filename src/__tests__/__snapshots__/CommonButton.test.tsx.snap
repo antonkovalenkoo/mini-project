@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommonButton component test CommonButton pass all button props to button 1`] = `
+<button
+  class="CommonButton"
+  type="submit"
+/>
+`;
