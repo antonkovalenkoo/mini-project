@@ -1,12 +1,11 @@
 import { ButtonHTMLAttributes, FC } from 'react';
 import './style.scss';
 
-const CommonButton: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({ 
-  disabled = false,
+const CommonButton: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
   ...props
 }) => {
   return (
-    <button {...props} disabled={disabled} className='CommonButton' />
+    <button {...props} className='CommonButton' />
   )
 }
 
