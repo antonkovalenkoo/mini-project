@@ -1,0 +1,6 @@
+.blog {
+  @include flex-center;  
+  max-width: 1300px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
