@@ -15,7 +15,9 @@ const CommonInput: FC<ICommonInputProps> = ({
       {prefixIcon && (
         <FontAwesomeIcon title="prefix" className="commonInput__icon" icon={prefixIcon} />
       )}
+
       <input {...props} className={`commonInput__input ${prefixIcon && 'padding-big'}`} />
+
       {postfixIcon && (
         <FontAwesomeIcon title="postfix" className="commonInput__icon postfix" icon={postfixIcon} />
       )}
