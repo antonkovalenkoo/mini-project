@@ -1,16 +1,23 @@
 import { FC } from 'react'
 import { useLocation, useNavigate } from 'react-router'
+import { useTypeSelector } from '../../hooks'
 import { logo } from '../../images'
 import './styles.scss'
 
 const Header: FC = () => {
   const locate = useLocation()
   const navigate = useNavigate()
+  const { articlePage } = useTypeSelector((state) => state.articles)
 
   return (
     <div className="header">
       <div className="header__container">
-        <img onClick={() => navigate('blog')} src={logo} alt="logo" className="header__img_logo" />
+        <img
+          onClick={() => navigate(`blog/page/${articlePage}`)}
+          src={logo}
+          alt="logo"
+          className="header__img_logo"
+        />
 
         {locate.pathname === '/sign-in' && (
           <button onClick={() => navigate('sign-up')} className="header__button">
@@ -22,7 +29,7 @@ const Header: FC = () => {
             Войти
           </button>
         )}
-        {locate.pathname === '/blog' && (
+        {locate.pathname === `/blog/page/${articlePage}` && (
           <button onClick={() => navigate('sign-in')} className="header__button">
             Войти
           </button>

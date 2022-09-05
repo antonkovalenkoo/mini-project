@@ -1,4 +1,5 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router'
 import { Article, Pagination } from '../'
 import { useTypeSelector } from '../../hooks'
 import { useActions } from '../../hooks/useActions'
@@ -6,13 +7,26 @@ import './style.scss'
 
 const Blog: FC = () => {
   const { getArticlesNextPage } = useActions()
-  const [page, setPage] = useState<number>(1)
-  const [itemLimit, setItemLimit] = useState<number>(10)
-  const { articles, totalArticles } = useTypeSelector((state) => state.articles)
+  const { page } = useParams()
+  const { articles, totalArticles, articlePage, limitPerPage } = useTypeSelector(
+    (state) => state.articles
+  )
+  const navigate = useNavigate()
+
+  const pageValidation = () => {
+    if (!!totalArticles) {
+      return +page! > 0
+        ? +page! <= Math.ceil(totalArticles / limitPerPage)
+          ? navigate(`page/${page}`)
+          : navigate('page/1')
+        : navigate('page/1')
+    }
+  }
 
   useEffect(() => {
-    getArticlesNextPage(page)
-  }, [page, totalArticles])
+    pageValidation()
+    getArticlesNextPage(+page!)
+  }, [articlePage, totalArticles, page])
 
   return (
     <div className="blog">
@@ -24,10 +38,9 @@ const Blog: FC = () => {
 
       <Pagination
         className="blog__pagination"
-        itemPerPage={itemLimit}
-        page={page}
-        setPage={setPage}
+        page={+page!}
         totalAmount={totalArticles}
+        limitPerPage={limitPerPage}
       />
     </div>
   )

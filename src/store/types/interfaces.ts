@@ -4,11 +4,14 @@ import { ArticlesActionEnum } from './enums'
 export interface IArticlesInitialStateProps {
   articles: IArticleDate[]
   totalArticles: number
+  articlePage: number
+  limitPerPage: number
 }
 
 export interface IArticlesPayload {
   articles: IArticleDate[]
   amount: number
+  page: number
 }
 
 export interface IGetArticles {

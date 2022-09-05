@@ -3,6 +3,8 @@ import { ArticlesActionEnum, IArticlesInitialStateProps, ArticlesActionType } fr
 const initialState: IArticlesInitialStateProps = {
   articles: [],
   totalArticles: 0,
+  limitPerPage: 10,
+  articlePage: 1,
 }
 
 export const ArticlesReducer = (
@@ -16,6 +18,7 @@ export const ArticlesReducer = (
         ...state,
         articles: action.payload.articles,
         totalArticles: action.payload.amount,
+        articlePage: action.payload.page,
       }
     default:
       return state
