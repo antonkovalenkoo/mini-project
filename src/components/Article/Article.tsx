@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { CommonButton } from '../'
 import { comment, like } from '../../images'
-import type { IArticleProps } from './interface'
+import { IArticleProps } from './interface'
 import './style.scss'
 
 const Article: FC<IArticleProps> = ({ article }) => {

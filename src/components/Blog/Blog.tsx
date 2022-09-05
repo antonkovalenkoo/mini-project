@@ -17,9 +17,9 @@ const Blog: FC = () => {
     if (!!totalArticles) {
       return +page! > 0
         ? +page! <= Math.ceil(totalArticles / limitPerPage)
-          ? navigate(`page/${page}`)
-          : navigate('page/1')
-        : navigate('page/1')
+          ? navigate(`/blog/${page}`)
+          : navigate('/blog/1')
+        : navigate('/blog/1')
     }
   }
 

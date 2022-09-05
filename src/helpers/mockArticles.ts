@@ -1,4 +1,4 @@
-import type { IArticleDate } from '../models/interfaces'
+import { IArticleDate } from '../models/interfaces'
 import { mockImage } from '../images'
 
 const mockData: IArticleDate = {

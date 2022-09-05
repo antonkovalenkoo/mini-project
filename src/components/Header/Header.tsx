@@ -13,7 +13,7 @@ const Header: FC = () => {
     <div className="header">
       <div className="header__container">
         <img
-          onClick={() => navigate(`blog/page/${articlePage}`)}
+          onClick={() => navigate(`/blog/${articlePage}`)}
           src={logo}
           alt="logo"
           className="header__img_logo"
@@ -29,7 +29,7 @@ const Header: FC = () => {
             Войти
           </button>
         )}
-        {locate.pathname === `/blog/page/${articlePage}` && (
+        {locate.pathname === `/blog/${articlePage}` && (
           <button onClick={() => navigate('sign-in')} className="header__button">
             Войти
           </button>
