@@ -1,0 +1,23 @@
+.pagination {
+  @include flex-center;
+  padding: 9px 10px;  
+  border-radius: 8px;
+  background: $purpule-color;
+
+  &__wrapper {
+    font-size: large;
+    padding: 0 10px;
+  }
+  
+  &__icons {
+    font-size: large;
+    width: 20px;
+    cursor: pointer;
+  }
+
+  &__button {    
+    border: none;
+    border-radius: 15px;
+    background-color: $primary-gray;
+  }
+}

@@ -14,8 +14,8 @@
   }
 
   &__preview {
-    width: 60%;
     @include flex-center;
+    width: 60%;
     flex-direction: column;
 
     &-heading {
