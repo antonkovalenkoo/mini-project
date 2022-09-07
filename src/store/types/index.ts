@@ -1,5 +1,5 @@
-export { ArticlesActionEnum } from './enums'
+export { ArticlesActionEnum, AuthActionEnum } from './enums'
 
-export type { IArticlesInitialStateProps, IArticlesPayload, IGetArticles } from './interfaces'
+export type { IArticlesInitialStateProps, IArticlesPayload, IGetArticles, IAuthInitialStateProps } from './interfaces'
 
-export type { ArticlesActionType } from './types'
+export type { ArticlesActionType, AuthActionType } from './types'

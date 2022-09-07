@@ -3,7 +3,7 @@ import { IArticleDate } from '../../models/interfaces'
 import { ArticlesActionEnum, IArticlesInitialStateProps, IGetArticles } from '../types'
 import { mockArticles } from '../../helpers/mockArticles'
 import { getArticles } from '../../api/ArticleService'
-import { getArticlesSuccess } from './action'
+import { getArticlesSuccess } from '../articles/action'
 import { RootState } from '..'
 
 function* watchArticles(): Generator<StrictEffect> {
@@ -25,8 +25,6 @@ function* getArticlesWorker({ page }: IGetArticles) {
   yield put(getArticlesSuccess({ articles: result, amount: mockArticles.length, page: resultPage }))
 }
 
-function* rootSaga() {
+export function* articleSaga() {
   yield fork(watchArticles)
 }
-
-export { rootSaga }

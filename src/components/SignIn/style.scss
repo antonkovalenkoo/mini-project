@@ -1,0 +1,33 @@
+.signIn {
+  @include flex-center;
+  flex-direction: column;
+  height: 90vh;
+
+  &__heading {
+    color: $text-color;
+  }
+
+  &__form {
+    @include flex-between;
+    flex-direction: column;
+    gap: 30px;
+    
+    &__box {
+      @include flex-center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__input {
+      width: 250px;
+      height: 40px;
+      border-radius: 10px;
+      padding: 0 10px;
+      border: 1px solid $primary-gray;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
