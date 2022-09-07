@@ -1,3 +1,5 @@
+import { FormikErrors, FormikTouched } from "formik"
+
 export interface IArticleDate {
   id: number
   image: string
@@ -11,4 +13,9 @@ export interface IArticleDate {
 export interface IAuthEntries {
   username: string;
   password: string;
+}
+
+export interface AuthFormProps {
+  errors: FormikErrors<IAuthEntries>
+  touched: FormikTouched<IAuthEntries>
 }
