@@ -7,7 +7,8 @@ import './styles.scss'
 const Header: FC = () => {
   const locate = useLocation()
   const navigate = useNavigate()
-  const { articlePage } = useTypeSelector((state) => state.articles)
+  const { articlePage } = useTypeSelector(state => state.articles)
+  const { isAuth } = useTypeSelector(state => state.auth)
 
   return (
     <div className="header">
@@ -19,20 +20,26 @@ const Header: FC = () => {
           className="header__img_logo"
         />
 
-        {locate.pathname === '/sign-in' && (
-          <button onClick={() => navigate('sign-up')} className="header__button">
-            Зарегистрироваться
-          </button>
-        )}
-        {locate.pathname === '/sign-up' && (
-          <button onClick={() => navigate('sign-in')} className="header__button">
-            Войти
-          </button>
-        )}
-        {locate.pathname === `/blog/${articlePage}` && (
-          <button onClick={() => navigate('sign-in')} className="header__button">
-            Войти
-          </button>
+        {isAuth ? (
+          <div>Авторизован</div>
+        ) : (
+          <>
+            {locate.pathname === '/sign-in' && (
+              <button onClick={() => navigate('sign-up')} className="header__button">
+                Зарегистрироваться
+              </button>
+            )}
+            {locate.pathname === '/sign-up' && (
+              <button onClick={() => navigate('sign-in')} className="header__button">
+                Войти
+              </button>
+            )}
+            {locate.pathname === `/blog/${articlePage}` && (
+              <button onClick={() => navigate('sign-in')} className="header__button">
+                Войти
+              </button>
+            )}
+          </>
         )}
       </div>
     </div>

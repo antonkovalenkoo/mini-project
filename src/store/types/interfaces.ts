@@ -1,5 +1,5 @@
 import { IArticleDate } from '../../models/interfaces'
-import { ArticlesActionEnum } from './enums'
+import { ArticlesActionEnum, AuthActionEnum } from './enums'
 
 export interface IArticlesInitialStateProps {
   articles: IArticleDate[]
@@ -22,4 +22,31 @@ export interface IGetArticles {
 export interface IGetArticlessSuccess {
   type: ArticlesActionEnum.GET_ARTICLES_SUCCESS
   payload: IArticlesPayload
+}
+
+export interface IAuthInitialStateProps {
+  isAuth: boolean
+  isLoading: boolean
+  username: string
+  password: string
+  enteredUsername: string
+  enteredPassword: string
+}
+
+export interface ISignInPayload {
+  username: string
+  password: string
+}
+
+export interface ISignIn {
+  type: AuthActionEnum.SIGN_IN
+  payload: ISignInPayload
+}
+
+export interface ISignInSuccess {
+  type: AuthActionEnum.SIGN_IN_SUCCESS
+}
+
+export interface ISignInFail {
+  type: AuthActionEnum.SIGN_IN_FAIL
 }

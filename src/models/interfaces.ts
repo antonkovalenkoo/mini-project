@@ -7,3 +7,8 @@ export interface IArticleDate {
   commentCounter: number
   comments: string[]
 }
+
+export interface IAuthEntries {
+  username: string;
+  password: string;
+}
