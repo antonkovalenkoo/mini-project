@@ -37,6 +37,21 @@ export const AuthReducer = (
         enteredUsername: '',
         enteredPassword: ''
       }
+    case AuthActionEnum.SIGN_UP:
+      return {
+        ...state, 
+        isLoading: true,
+        enteredUsername: action.payload.username,
+        enteredPassword: action.payload.password
+      }
+    case AuthActionEnum.SIGN_UP_SUCCESS:
+      return {
+        ...state, 
+        isAuth: true,
+        isLoading: false,
+        username: action.payload.username,
+        password: action.payload.password
+      }
     default:
       return state
   }

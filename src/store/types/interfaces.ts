@@ -33,14 +33,14 @@ export interface IAuthInitialStateProps {
   enteredPassword: string
 }
 
-export interface ISignInPayload {
+export interface IAuthPayload {
   username: string
   password: string
 }
 
 export interface ISignIn {
   type: AuthActionEnum.SIGN_IN
-  payload: ISignInPayload
+  payload: IAuthPayload
 }
 
 export interface ISignInSuccess {
@@ -49,4 +49,14 @@ export interface ISignInSuccess {
 
 export interface ISignInFail {
   type: AuthActionEnum.SIGN_IN_FAIL
+}
+
+export interface ISignUp {
+  type: AuthActionEnum.SIGN_UP
+  payload: IAuthPayload
+}
+
+export interface ISignUpSuccess {
+  type: AuthActionEnum.SIGN_UP_SUCCESS
+  payload: IAuthPayload
 }

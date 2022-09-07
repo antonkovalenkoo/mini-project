@@ -1,11 +1,10 @@
-import { FC, useEffect } from 'react';
-import { Formik, Field, Form, FormikHelpers } from 'formik';
-import CommonButton from '../UI/CommonButton/CommonButton';
-import { validateUsername, validatePassword } from '../../helpers/validation';
+import { FC } from 'react';
+import { Formik, FormikHelpers } from 'formik';
 import { IAuthEntries } from '../../models/interfaces';
-import './style.scss';
 import { useActions, useTypeSelector } from '../../hooks';
 import { useNavigate } from 'react-router-dom';
+import { AuthForm } from '..';
+import './style.scss';
 
 const SignIn: FC = () => {
   const navigate = useNavigate();
@@ -37,49 +36,10 @@ const SignIn: FC = () => {
         onSubmit={onSubmitHandler}
       >
         {({ errors, touched }) => (
-          <Form className='signIn__form'>
-            <div className='signIn__form__box'>
-              <label 
-                htmlFor="username"
-                className='signIn__form__label'
-                >
-                Логин:
-              </label>
-              <Field 
-                id="username" 
-                name="username" 
-                placeholder="Enter your username"
-                type='text'
-                className='signIn__form__input'
-                validate={validateUsername}
-              />
-              {errors.username && touched.username && <div>{errors.username}</div>}
-            </div>
-
-            <div className='signIn__form__box'>
-              <label 
-                htmlFor="password"
-                className='signIn__form__label'
-              >
-                Пароль:
-              </label>
-              <Field 
-                id="password" 
-                name="password" 
-                placeholder="Enter password" 
-                type='password'
-                className='signIn__form__input'
-                validate={validatePassword}
-              />
-              {errors.password && touched.password && <div>{errors.password}</div>}
-            </div>
-
-            <CommonButton 
-              type="submit"
-            >
-              Войти
-            </CommonButton>
-          </Form>
+          <AuthForm 
+            errors={errors}
+            touched={touched}
+          />
         )}
       </Formik>
     </div>
