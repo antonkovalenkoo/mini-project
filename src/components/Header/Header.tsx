@@ -1,9 +1,8 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useTypeSelector } from '../../hooks'
 import { logo, profile } from '../../assets'
-import { changeColor } from '../../helpers/changeColor'
 import './styles.scss'
 
 const Header: FC = () => {
@@ -11,19 +10,6 @@ const Header: FC = () => {
   const navigate = useNavigate()
   const { articlePage } = useTypeSelector(state => state.articles)
   const { isAuth } = useTypeSelector(state => state.auth)
-  const { headerColor } = useTypeSelector(state => state.auth)
-
-  useEffect(() => {
-    let newColor = headerColor;
-    if (!headerColor) {
-      const colorFromStorage = localStorage.getItem('header-color');
-      if (colorFromStorage) {
-        newColor = colorFromStorage
-      }
-    }
-    changeColor('--header-color', newColor);
-  }, [headerColor])
-
 
   return (
     <div className="header" >

@@ -1,9 +1,14 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { Routes, Route, Navigate } from 'react-router'
 import { Blog, SignIn, SignUp, Layout, Profile } from './components'
+import { changeColor } from './helpers/changeColor'
 import './App.scss'
 
 const App: FC = () => {
+  useEffect(() => {
+    changeColor('--header-color', localStorage.getItem('header-color'));
+  }, [])
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
