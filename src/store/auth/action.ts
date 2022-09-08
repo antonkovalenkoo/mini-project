@@ -23,3 +23,8 @@ export const signUpSuccessAction = (payload: IAuthPayload) => ({
   type: AuthActionEnum.SIGN_UP_SUCCESS,
   payload
 })
+
+export const changeColorAction = (payload: string) => ({
+  type: AuthActionEnum.CHANGE_COLOR,
+  payload
+})

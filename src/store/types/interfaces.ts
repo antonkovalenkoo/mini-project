@@ -31,6 +31,7 @@ export interface IAuthInitialStateProps {
   password: string
   enteredUsername: string
   enteredPassword: string
+  headerColor: string
 }
 
 export interface IAuthPayload {
@@ -59,4 +60,9 @@ export interface ISignUp {
 export interface ISignUpSuccess {
   type: AuthActionEnum.SIGN_UP_SUCCESS
   payload: IAuthPayload
+}
+
+export interface IChangeColor {
+  type: AuthActionEnum.CHANGE_COLOR
+  payload: string
 }

@@ -1,12 +1,13 @@
 import { AuthActionEnum, IAuthInitialStateProps, AuthActionType } from '../types'
 
 const initialState: IAuthInitialStateProps = {
-  isAuth: false,
+  isAuth: true, // default is false
   isLoading: false,
   username: 'admin123',
   password: 'admin123', 
   enteredUsername: '',
-  enteredPassword: ''
+  enteredPassword: '',
+  headerColor: ''
 }
 
 export const AuthReducer = (
@@ -51,6 +52,11 @@ export const AuthReducer = (
         isLoading: false,
         username: action.payload.username,
         password: action.payload.password
+      }
+    case AuthActionEnum.CHANGE_COLOR:
+      return {
+        ...state, 
+        headerColor: action.payload
       }
     default:
       return state

@@ -1,5 +1,5 @@
 import { IArticleDate } from '../models/interfaces'
-import { mockImage } from '../images'
+import { mockImage } from '../assets'
 
 const mockData: IArticleDate = {
   id: 1,

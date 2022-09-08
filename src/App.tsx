@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Routes, Route, Navigate } from 'react-router'
-import { Blog, SignIn, SignUp, Layout } from './components'
+import { Blog, SignIn, SignUp, Layout, Profile } from './components'
 import './App.scss'
 
 const App: FC = () => {
@@ -11,6 +11,7 @@ const App: FC = () => {
         <Route path="blog/:page" element={<Blog />} />
         <Route path="sign-in" element={<SignIn />} />
         <Route path="sign-up" element={<SignUp />} />
+        <Route path="profile" element={<Profile />} />
         <Route path="*" element={<Navigate to="blog/1" />} />
       </Route>
     </Routes>
