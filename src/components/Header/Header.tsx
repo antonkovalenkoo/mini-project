@@ -1,8 +1,9 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useTypeSelector } from '../../hooks'
 import { logo, profile } from '../../assets'
+import { changeColor } from '../../helpers/changeColor'
 import './styles.scss'
 
 const Header: FC = () => {
@@ -10,25 +11,22 @@ const Header: FC = () => {
   const navigate = useNavigate()
   const { articlePage } = useTypeSelector(state => state.articles)
   const { isAuth } = useTypeSelector(state => state.auth)
-  const [newColor, setNewColor] = useState('')
-  const { headerColor } = useTypeSelector(
-    (state) => state.auth
-  )
+  const { headerColor } = useTypeSelector(state => state.auth)
 
   useEffect(() => {
-    const color = localStorage.getItem('header-color');
-    if (color) {
-      setNewColor(color);
+    let newColor = headerColor;
+    if (!headerColor) {
+      const colorFromStorage = localStorage.getItem('header-color');
+      if (colorFromStorage) {
+        newColor = colorFromStorage
+      }
     }
+    changeColor('--header-color', newColor);
   }, [headerColor])
 
+
   return (
-    <div 
-      className="header" 
-      style={newColor 
-        ? { backgroundColor: newColor } 
-        : { backgroundColor: '#f5f0f0'}
-      }>
+    <div className="header" >
       <div className="header__container">
         <img
           onClick={() => navigate(`/blog/${articlePage}`)}

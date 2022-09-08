@@ -18,7 +18,8 @@ const Profile: FC = () => {
       <label htmlFor="color-change">Изменить цвет:</label>
       <input 
         id="color-change" 
-        type="color" 
+        type="color"
+        value={color || localStorage.getItem('header-color') || undefined}
         onChange={(e) => setColor(e.target.value)
       }/>
       <CommonButton 
