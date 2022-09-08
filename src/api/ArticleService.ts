@@ -12,3 +12,10 @@ export const getArticles = (page: number): Promise<IArticleDate[]> => {
     resolve(result)
   })
 }
+
+export const getArticle = (id: number): Promise<IArticleDate> => {
+  return new Promise((resolve) => {
+    const result = mockArticles.find((element) => element.id === id)
+    resolve(result!)
+  })
+}

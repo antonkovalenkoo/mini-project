@@ -1,4 +1,4 @@
-import { FormikErrors, FormikTouched } from "formik"
+import { FormikErrors, FormikTouched } from 'formik'
 
 export interface IArticleDate {
   id: number
@@ -6,13 +6,13 @@ export interface IArticleDate {
   title: string
   description: string
   likeCounter: number
-  commentCounter: number
+  dislikeCounter: number
   comments: string[]
 }
 
 export interface IAuthEntries {
-  username: string;
-  password: string;
+  username: string
+  password: string
 }
 
 export interface AuthFormProps {
