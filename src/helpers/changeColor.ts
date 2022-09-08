@@ -1,3 +1,4 @@
+import { variablesAlias } from "../models/enums";
 import { rootVariables } from "../models/types";
 
 export const changeColor = (name: rootVariables, newColor: string | null) => {
@@ -6,5 +7,5 @@ export const changeColor = (name: rootVariables, newColor: string | null) => {
     throw new Error(`Can't select the root element`)
   }
 
-  root.style.setProperty(name, newColor || '#f5f0f0');
+  root.style.setProperty(variablesAlias[name], newColor);
 }

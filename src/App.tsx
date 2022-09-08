@@ -6,7 +6,7 @@ import './App.scss'
 
 const App: FC = () => {
   useEffect(() => {
-    changeColor('--header-color', localStorage.getItem('header-color'));
+    changeColor('header', localStorage.getItem('header-color'));
   }, [])
 
   return (

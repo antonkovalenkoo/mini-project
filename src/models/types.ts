@@ -1,1 +1,1 @@
-export type rootVariables = '--header-color';
+export type rootVariables = 'header';
