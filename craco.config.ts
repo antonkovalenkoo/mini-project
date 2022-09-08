@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   style: {
     sass: {
       loaderOptions: {

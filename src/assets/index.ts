@@ -1,0 +1,5 @@
+export { default as logo } from './images/logo.png'
+export { default as like } from './images/like.svg'
+export { default as comment } from './images/comment.svg'
+export { default as mockImage } from './images/mock.png'
+export { default as profile } from './images/profile.svg'

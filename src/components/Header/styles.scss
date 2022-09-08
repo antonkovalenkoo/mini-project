@@ -1,16 +1,24 @@
 .header {
   @include flex-center;
   height: 75px;
-  background-color: $primary-gray ;
+  background-color: $primary-gray;
 
   &__container {
     @include flex-between;
     width: 1400px;
   }
 
-  &__img_logo {
-    padding-left: 4rem;
-    cursor: pointer; 
+  &__img {
+    &_logo {
+      padding-left: 4rem;
+      cursor: pointer; 
+    }
+
+    &_profile {
+      margin-right: 30px;
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &__button {

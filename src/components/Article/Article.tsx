@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { CommonButton } from '../'
-import { comment, like } from '../../images'
+import { comment, like } from '../../assets'
 import { IArticleProps } from './interface'
 import './style.scss'
 
