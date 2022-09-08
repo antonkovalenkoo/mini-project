@@ -8,7 +8,7 @@ const Profile: FC = () => {
   
   const changeColorHandler = () => {
     localStorage.setItem('header-color', color);
-    changeColor('header', localStorage.getItem('header-color'));
+    changeColor('header', color);
   }
 
   return (
