@@ -7,8 +7,8 @@ import './styles.scss'
 const Header: FC = () => {
   const locate = useLocation()
   const navigate = useNavigate()
-  const { articlePage } = useTypeSelector(state => state.articles)
-  const { isAuth } = useTypeSelector(state => state.auth)
+  const { articlePage } = useTypeSelector((state) => state.articles)
+  const { isAuth } = useTypeSelector((state) => state.auth)
 
   return (
     <div className="header">

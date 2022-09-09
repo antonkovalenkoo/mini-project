@@ -1,16 +1,16 @@
-import { IArticleDate } from '../../models/interfaces'
+import { IArticle } from '../../models/interfaces'
 import { ArticlesActionEnum, AuthActionEnum } from './enums'
 
 export interface IArticlesInitialStateProps {
-  articles: IArticleDate[]
-  article?: IArticleDate
+  articles: IArticle[]
+  article?: IArticle
   totalArticles: number
   articlePage: number
   limitPerPage: number
 }
 
 export interface IArticlesPayload {
-  articles: IArticleDate[]
+  articles: IArticle[]
   amount: number
   page: number
 }
@@ -32,7 +32,7 @@ export interface IGetArticle {
 
 export interface IGetArticleSuccess {
   type: ArticlesActionEnum.GET_ARTICLE_SUCCESS
-  payload: IArticleDate
+  payload: IArticle
 }
 
 export interface IAuthInitialStateProps {

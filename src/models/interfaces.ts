@@ -1,6 +1,6 @@
 import { FormikErrors, FormikTouched } from 'formik'
 
-export interface IArticleDate {
+export interface IArticle {
   id: number
   image: string
   title: string

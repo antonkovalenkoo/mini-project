@@ -1,5 +1,5 @@
 import { ArticlesActionEnum, IArticlesPayload, IGetArticles } from '../types'
-import { IArticleDate } from '../../models/interfaces'
+import { IArticle } from '../../models/interfaces'
 import { IGetArticle } from '../types/interfaces'
 
 export const getArticlesNextPage = (page: number): IGetArticles => {
@@ -21,7 +21,7 @@ export const getArticle = (id: number): IGetArticle => {
   }
 }
 
-export const getArticleSuccess = (payload: IArticleDate) => ({
+export const getArticleSuccess = (payload: IArticle) => ({
   type: ArticlesActionEnum.GET_ARTICLE_SUCCESS,
   payload,
 })

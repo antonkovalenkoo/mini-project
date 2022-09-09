@@ -15,12 +15,11 @@
   }
   &__parent {
     position: relative;
-    background-color: rgb(12, 199, 12);
+    background-color: $secondary-green;
   }
 
   &__child {
     position: absolute;
-    background-color: rgb(231, 20, 20);
-    
+    background-color: $secondary-red;    
   }
 }

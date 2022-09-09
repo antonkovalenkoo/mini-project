@@ -23,7 +23,12 @@ const Article: FC<IArticleProps> = ({ article }) => {
         <p className="article__preview-description">{article.description}</p>
 
         <div className="article__actions">
-          <CommonButton className="article__actions-button">Читать</CommonButton>
+          <CommonButton
+            onClick={() => navigate(`../blog/articles/${article.id}`)}
+            className="article__actions-button"
+          >
+            Читать
+          </CommonButton>
 
           <div className="article__action-wrapper">
             <div className="article__action-like">

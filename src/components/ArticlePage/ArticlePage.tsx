@@ -2,18 +2,12 @@ import { FC, useEffect } from 'react'
 import { like, comment } from '../../images/index'
 import { CommonButton, Rating } from '../'
 import { useNavigate, useParams } from 'react-router'
-import { useActions, useTypeSelector } from '../../hooks'
 import './styles.scss'
+import { useArticleById } from '../../hooks/useArticleById'
 
 const ArticlePage: FC = () => {
-  const { id } = useParams()
-  const { getArticle } = useActions()
-  const { article } = useTypeSelector((state) => state.articles)
   const navigate = useNavigate()
-
-  useEffect(() => {
-    getArticle(+id!)
-  }, [])
+  const article = useArticleById()
 
   return (
     <div className="article-page">
