@@ -1,13 +1,21 @@
 import { FC } from 'react'
+import { useNavigate } from 'react-router'
 import { CommonButton } from '../'
 import { comment, like } from '../../images'
 import { IArticleProps } from './interface'
 import './style.scss'
 
 const Article: FC<IArticleProps> = ({ article }) => {
+  const navigate = useNavigate()
+
   return (
     <div className="article">
-      <img className="article__img" src={article.image} alt="image" />
+      <img
+        className="article__img"
+        onClick={() => navigate(`../blog/articles/${article.id}`)}
+        src={article.image}
+        alt="image"
+      />
 
       <div className="article__preview">
         <h3 className="article__preview-heading">{article.title}</h3>
@@ -15,15 +23,28 @@ const Article: FC<IArticleProps> = ({ article }) => {
         <p className="article__preview-description">{article.description}</p>
 
         <div className="article__actions">
-          <CommonButton className="article__actions-button">Читать</CommonButton>
+          <CommonButton
+            onClick={() => navigate(`../blog/articles/${article.id}`)}
+            className="article__actions-button"
+          >
+            Читать
+          </CommonButton>
 
           <div className="article__action-wrapper">
             <div className="article__action-like">
-              <button className="article__action-button">
+              <button className="article__action-button article__action-button_like">
                 <img src={like} alt="like" />
               </button>
 
               <p className="article__action-count">{article.likeCounter}</p>
+            </div>
+
+            <div className="article__action-dislike">
+              <button className="article__action-button article__action-button_dislike">
+                <img className="article__action-dislike" src={like} alt="dislike" />
+              </button>
+
+              <p className="article__action-count">{article.dislikeCounter}</p>
             </div>
 
             <div className="article__action-comment">
@@ -31,7 +52,7 @@ const Article: FC<IArticleProps> = ({ article }) => {
                 <img src={comment} alt="comment" />
               </button>
 
-              <p className="article__action-count">{article.commentCounter}</p>
+              <p className="article__action-count">{article.comments.length}</p>
             </div>
           </div>
         </div>

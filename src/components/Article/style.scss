@@ -30,6 +30,7 @@
 
   &__actions {
     @include flex-center;
+    flex-direction: column;
     width: 80%;
 
     &-button {
@@ -45,11 +46,15 @@
     @include flex-between;
 
     &-wrapper {
-      @include flex-center;
-      flex-direction: column;
+      width: 70%;
+      @include flex-between;      
     }
 
     &-like {
+      @include flex-between;
+    }
+
+    &-dislike {
       @include flex-between;
     }
 
@@ -65,7 +70,16 @@
       &:hover {        
         transform: scale(1.04);        
       }
+      
+      &_dislike {       
+        transform: rotate(180deg);
+
+        &:hover {        
+          transform: scale(1.04) rotate(180deg);        
+        }
+      }
     }
+
 
     &-count {
       font-size: 17px;

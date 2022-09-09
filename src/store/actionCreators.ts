@@ -3,5 +3,5 @@ import * as AuthActionTypes from './auth/action'
 
 export default {
   ...ArticleActionTypes,
-  ...AuthActionTypes
+  ...AuthActionTypes,
 }

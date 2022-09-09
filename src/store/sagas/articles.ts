@@ -1,13 +1,15 @@
 import { put, StrictEffect, takeEvery, fork, call, select } from 'redux-saga/effects'
-import { IArticleDate } from '../../models/interfaces'
-import { ArticlesActionEnum, IArticlesInitialStateProps, IGetArticles } from '../types'
+import { IArticle } from '../../models/interfaces'
+import { ArticlesActionEnum, IGetArticles } from '../types'
 import { mockArticles } from '../../helpers/mockArticles'
-import { getArticles } from '../../api/ArticleService'
-import { getArticlesSuccess } from '../articles/action'
+import { getArticles, getArticle } from '../../api/ArticleService'
+import { getArticlesSuccess, getArticleSuccess } from '../articles/action'
 import { RootState } from '..'
+import { IGetArticle } from '../types/interfaces'
 
 function* watchArticles(): Generator<StrictEffect> {
   yield takeEvery(ArticlesActionEnum.GET_ARTICLES, getArticlesWorker)
+  yield takeEvery(ArticlesActionEnum.GET_ARTICLE, getArticleWorker)
 }
 const getItems = (state: RootState) => state.articles
 
@@ -21,8 +23,13 @@ function* getArticlesWorker({ page }: IGetArticles) {
       ? state.articlePage
       : page
 
-  const result: IArticleDate[] = yield call(getArticles, resultPage)
+  const result: IArticle[] = yield call(getArticles, resultPage)
   yield put(getArticlesSuccess({ articles: result, amount: mockArticles.length, page: resultPage }))
+}
+
+function* getArticleWorker({ id }: IGetArticle) {
+  const result: IArticle = yield call(getArticle, id)
+  yield put(getArticleSuccess(result))
 }
 
 export function* articleSaga() {

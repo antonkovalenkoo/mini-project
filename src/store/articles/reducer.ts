@@ -20,6 +20,11 @@ export const ArticlesReducer = (
         totalArticles: action.payload.amount,
         articlePage: action.payload.page,
       }
+    case ArticlesActionEnum.GET_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        article: action.payload,
+      }
     default:
       return state
   }

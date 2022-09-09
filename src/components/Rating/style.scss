@@ -1,0 +1,25 @@
+.rating { 
+  display: flex;
+  align-items: center;  
+
+  &__number {
+    font-size: 20px;
+    margin: 0 1rem;
+  }
+
+  &__line {    
+    width: 150px;
+    height: 10px;
+    border-radius: 10px;
+  
+  }
+  &__parent {
+    position: relative;
+    background-color: $secondary-green;
+  }
+
+  &__child {
+    position: absolute;
+    background-color: $secondary-red;    
+  }
+}

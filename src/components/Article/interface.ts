@@ -1,5 +1,5 @@
-import { IArticleDate } from '../../models/interfaces'
+import { IArticle } from '../../models/interfaces'
 
 export interface IArticleProps {
-  article: IArticleDate
+  article: IArticle
 }
